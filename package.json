@@ -21,5 +21,10 @@
   "bugs": {
     "url": "https://github.com/gnuns/omigo/issues"
   },
-  "homepage": "https://github.com/gnuns/omigo#readme"
+  "homepage": "https://github.com/gnuns/omigo#readme",
+  "dependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.1.2",
+    "socket.io": "^1.6.0"
+  }
 }
