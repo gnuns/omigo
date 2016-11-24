@@ -1,5 +1,5 @@
 {
-  "name": "omigo",
+  "name": "omigo-server",
   "version": "1.0.0",
   "description": "a really simple omegle clone",
   "main": "app.js",
