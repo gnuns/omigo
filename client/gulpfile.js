@@ -1,9 +1,10 @@
-var gulp    = require('gulp');
-var gulpIf  = require('gulp-if');
-var sass    = require('gulp-sass');
-var cssnano = require('gulp-cssnano');
-var useref  = require('gulp-useref');
-var uglify  = require('gulp-uglify');
+const gulp    = require('gulp');
+const gulpIf  = require('gulp-if');
+const sass    = require('gulp-sass');
+const cssnano = require('gulp-cssnano');
+const useref  = require('gulp-useref');
+const uglify  = require('gulp-uglify');
+const babel   = require('gulp-babel');
 
 gulp.task('sass', function(){
   return gulp.src('src/scss/styles.scss')
@@ -22,6 +23,7 @@ gulp.task('build', function(){
 
   return gulp.src('src/*.html')
     .pipe(useref())
+    .pipe(gulpIf('*.js', babel({presets: ['es2015']})))
     .pipe(gulpIf('*.js', uglify()))
     .pipe(gulpIf('*.css', cssnano()))
     .pipe(gulp.dest('dist'));
