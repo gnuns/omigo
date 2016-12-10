@@ -13,6 +13,13 @@ gulp.task('sass', function(){
 
 gulp.task('build', function(){
   gulp.start('sass');
+
+  gulp.src('src/fonts/**/*')
+  .pipe(gulp.dest('dist/fonts'));
+
+  gulp.src('src/img/**/*.+(png|jpg|jpeg|gif|svg)')
+  .pipe(gulp.dest('dist/img'));
+
   return gulp.src('src/*.html')
     .pipe(useref())
     .pipe(gulpIf('*.js', uglify()))
