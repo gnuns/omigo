@@ -1,0 +1,15 @@
+.header {
+  background-color: $darkgray;
+  height: 32px;
+  width: 100%;
+  padding:5px 15px;
+  overflow: hidden;
+  .logo {
+    float: left;
+    margin-right: 15px;
+    width: 72px;
+  }
+  button {
+    margin-top: 2px;
+  }
+}

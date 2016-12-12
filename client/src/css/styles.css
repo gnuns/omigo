@@ -1,2 +1,87 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
 body {
   background-color: #FDFDFD; }
+
+a {
+  text-decoration: none;
+  outline: 0; }
+
+.pull-right {
+  float: right; }
+
+.pull-left {
+  float: left; }
+
+.btn {
+  padding: 5px 10px;
+  margin: 0px;
+  color: #EEEEEE;
+  background-color: #404444;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer; }
+  .btn:active {
+    outline: 0;
+    border: 0px;
+    background-color: yellow; }
+  .btn.green {
+    background-color: #80CC47; }
+
+.header {
+  background-color: #3F4343;
+  height: 32px;
+  width: 100%;
+  padding: 5px 15px;
+  overflow: hidden; }
+  .header .logo {
+    float: left;
+    margin-right: 15px;
+    width: 72px; }
+  .header button {
+    margin-top: 2px; }

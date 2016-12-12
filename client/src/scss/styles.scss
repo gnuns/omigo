@@ -1,2 +1,8 @@
-@import 'variables';
-@import 'scaffolding'; 
+@import 'base/variables';
+@import 'base/reset';
+@import 'base/scaffolding';
+
+@import 'components/helpers';
+@import 'components/buttons';
+
+@import 'parts/header';
