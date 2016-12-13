@@ -6,12 +6,23 @@
   border: none;
   border-radius: 3px;
   cursor: pointer;
+  opacity: .95;
+  font-weight: 600;
+  text-transform: lowercase;
+
   &:active {
     outline: 0;
     border: 0px;
-    background-color: yellow;
+  }
+  &:hover {
+    opacity: 1;
   }
   &.green {
+    color: $darkgray;
     background-color: $green;
+  }
+  &.red {
+    color: $darkgray;
+    background-color: $red;
   }
 }

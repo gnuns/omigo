@@ -1,0 +1,18 @@
+.chat {
+  width: 100%;
+  height: 100%;
+  min-height: 500px;
+  margin-top: 20px;
+  div {
+    box-shadow: 2px 10px 15px #888888;
+  }
+  .text {
+    width: 70%;
+    min-height: 500px;
+    display: table;
+    float: right;
+    position: relative;
+    background-color: #fff;
+    border-radius: 4px;
+  }
+}

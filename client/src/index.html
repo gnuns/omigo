@@ -2,21 +2,39 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Omigo</title>
+  <title>omigo</title>
   <!--build:css css/styles.min.css-->
   <link rel="stylesheet" href="css/styles.css">
   <!--endbuild-->
 </head>
 <body>
   <div class="header">
-    <div class="logo">
-      <img src="img/logo.png" alt="Omigo">
+    <div class="container">
+      <div class="logo">
+        <img src="img/logo.png" width="75px" alt="Omigo">
+      </div>
+      <button class="btn green" type="button" name="action">start</button>
+      <div class="online-count">
+        <strong>15</strong> online now
+      </div>
     </div>
-    <button class="btn green" type="button" name="action">New</button>
+  </div>
+  <div class="container">
+    <div class="chat">
+      <div class="video">
+        <div class="stranger"></div>
+        <div class="me"></div>
+      </div>
+      <div class="text">
+          <div class="conversation-box">
+          </div>
+          <div class="write-box">
 
-
+          </div>
+      </div>
+    </div>
   </div>
   <!--build:js js/main.min.js -->
   <script src="js/app.js"></script>

@@ -1,7 +1,23 @@
+html, body {
+    height: 100%;
+}
 body {
   background-color: $lightone;
+  font-family: 'Open Sans', sans-serif !important;
 }
 a {
   text-decoration: none;
   outline: 0;
+}
+strong {
+  font-weight: 700;
+}
+.container {
+  width: 100%;
+  width: calc(100% - 20px);
+  padding: 0px 10px;
+  max-width: 1280px;
+  height: auto;
+  margin: auto;
+  display: block;
 }
