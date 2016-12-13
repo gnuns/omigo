@@ -39,6 +39,6 @@ gulp.task('build', function(){
     .pipe(gulp.dest('dist'));
 });
 
-gulp.task('watch', ['browserSync'], function(){
-  gulp.watch(['src/scss/**/*.scss', 'src/scss/**/_*.scss'], ['sass']);
+gulp.task('live', ['sass', 'browserSync'], function(){
+  gulp.watch('src/scss/**/*.scss', ['sass']);
 })
