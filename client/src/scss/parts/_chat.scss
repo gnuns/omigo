@@ -48,7 +48,10 @@
     .video {
       width: 100%;
       height: 40%;
-      // padding-top: 56.25%;
+      /*
+        to set automatic 16:9 aspect ratio, set:
+        "padding-top: 56.25%"  and "width 100%;"
+      */
       border-radius: 0px !important;
       .stranger {
         width: 100%;
@@ -68,11 +71,9 @@
   .text {
     width: 100% !important;
     height: 60% !important;
-    // display: table !important;
     position: absolute !important;
     background-color: #fff !important;
     border-radius: $default-radius !important;
-    // padding-bottom: 60%;
     top:auto !important;
     bottom: 0px !important;
     left: 0px !important;
