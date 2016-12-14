@@ -25,3 +25,15 @@
     font-weight: 200;
   }
 }
+@media screen and (max-width: $mobile-width) {
+  .header {
+    .online-count {
+      display: none;
+    }
+    button {
+      float: right;
+      margin-top: 2.5px;
+      font-size: 1em;
+    }
+  }
+}

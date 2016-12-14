@@ -1,18 +1,82 @@
 .chat {
   width: 100%;
   height: 100%;
-  min-height: 500px;
-  margin-top: 20px;
-  div {
-    box-shadow: 2px 10px 15px #888888;
+  max-height: 520px;
+  position: absolute;
+  padding: 0px;
+  margin-top: 25px;
+  display: block;
+
+  .video {
+    width: 320px;
+    height: 100%;
+    display: block;
+    position: absolute;
+    left: 0px;
+    .me, .stranger {
+      background-color: $lightgray;
+      border-radius: $default-radius;
+      height:  49%;
+      width: 100%;
+      position: absolute;
+    }
+    .stranger {
+      top: 0px;
+      left: 0px;
+    }
+    .me {
+      bottom: 0px;
+      left: 0px;
+    }
   }
   .text {
-    width: 70%;
-    min-height: 500px;
-    display: table;
-    float: right;
-    position: relative;
+    width: calc(100% - 340px);
+    height: 100%;
+    // display: table;
+    position: absolute;
     background-color: #fff;
-    border-radius: 4px;
+    border-radius: $default-radius;
+    bottom: 0px;
+    right: 0px;
+  }
+}
+@media screen and (max-width: $mobile-width) {
+  .chat {
+    width: 100%;
+    height: 100%;
+    margin-top: 0px;
+    .video {
+      width: 100%;
+      height: 40%;
+      // padding-top: 56.25%;
+      border-radius: 0px !important;
+      .stranger {
+        width: 100%;
+        height: 100%;
+      }
+      .me {
+        z-index: 1000;
+        width: 30%;
+        height: 0px;
+        bottom: 10px;
+        right: 10px;
+        left: auto;
+        padding-top: 16.875%;
+      }
+    }
+  }
+  .text {
+    width: 100% !important;
+    height: 60% !important;
+    // display: table !important;
+    position: absolute !important;
+    background-color: #fff !important;
+    border-radius: $default-radius !important;
+    // padding-bottom: 60%;
+    top:auto !important;
+    bottom: 0px !important;
+    left: 0px !important;
+    right: 0px !important;
+    border-radius: 0px !important;
   }
 }

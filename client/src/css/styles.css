@@ -46,10 +46,12 @@ table {
   border-spacing: 0; }
 
 html, body {
-  height: 100%; }
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden; }
 
 body {
-  background-color: #FCFCFC;
+  background-color: #FDFDFD;
   font-family: 'Open Sans', sans-serif !important; }
 
 a {
@@ -61,12 +63,26 @@ strong {
 
 .container {
   width: 100%;
-  width: calc(100% - 20px);
-  padding: 0px 10px;
-  max-width: 1280px;
-  height: auto;
+  width: calc(100% - 40px);
+  right: 20px;
+  left: 20px;
+  position: absolute;
   margin: auto;
   display: block; }
+  .container.main {
+    height: 90%;
+    height: calc(100% - 100px); }
+
+@media screen and (max-width: 575px) {
+  .container {
+    width: calc(100% - 20px) !important;
+    left: 10px;
+    right: 10px; }
+    .container.main {
+      width: 100% !important;
+      height: 90% !important;
+      left: 0px;
+      right: 0px; } }
 
 /* cyrillic-ext */
 @font-face {
@@ -130,6 +146,11 @@ strong {
 .pull-left {
   float: left; }
 
+.basic-shadow {
+  -webkit-box-shadow: 1px 2px 4px 0px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 1px 2px 4px 0px rgba(0, 0, 0, 0.15);
+  box-shadow: 1px 2px 4px 0px rgba(0, 0, 0, 0.15); }
+
 .btn {
   padding: 5px 10px;
   margin: 0px;
@@ -177,18 +198,77 @@ strong {
     font-size: 1em;
     font-weight: 200; }
 
+@media screen and (max-width: 575px) {
+  .header .online-count {
+    display: none; }
+  .header button {
+    float: right;
+    margin-top: 2.5px;
+    font-size: 1em; } }
+
 .chat {
   width: 100%;
   height: 100%;
-  min-height: 500px;
-  margin-top: 20px; }
-  .chat div {
-    box-shadow: 2px 10px 15px #888888; }
+  max-height: 520px;
+  position: absolute;
+  padding: 0px;
+  margin-top: 25px;
+  display: block; }
+  .chat .video {
+    width: 320px;
+    height: 100%;
+    display: block;
+    position: absolute;
+    left: 0px; }
+    .chat .video .me, .chat .video .stranger {
+      background-color: #EEEEEE;
+      border-radius: 3px;
+      height: 49%;
+      width: 100%;
+      position: absolute; }
+    .chat .video .stranger {
+      top: 0px;
+      left: 0px; }
+    .chat .video .me {
+      bottom: 0px;
+      left: 0px; }
   .chat .text {
-    width: 70%;
-    min-height: 500px;
-    display: table;
-    float: right;
-    position: relative;
+    width: calc(100% - 340px);
+    height: 100%;
+    position: absolute;
     background-color: #fff;
-    border-radius: 4px; }
+    border-radius: 3px;
+    bottom: 0px;
+    right: 0px; }
+
+@media screen and (max-width: 575px) {
+  .chat {
+    width: 100%;
+    height: 100%;
+    margin-top: 0px; }
+    .chat .video {
+      width: 100%;
+      height: 40%;
+      border-radius: 0px !important; }
+      .chat .video .stranger {
+        width: 100%;
+        height: 100%; }
+      .chat .video .me {
+        z-index: 1000;
+        width: 30%;
+        height: 0px;
+        bottom: 10px;
+        right: 10px;
+        left: auto;
+        padding-top: 16.875%; }
+  .text {
+    width: 100% !important;
+    height: 60% !important;
+    position: absolute !important;
+    background-color: #fff !important;
+    border-radius: 3px !important;
+    top: auto !important;
+    bottom: 0px !important;
+    left: 0px !important;
+    right: 0px !important;
+    border-radius: 0px !important; } }
