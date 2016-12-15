@@ -7,7 +7,7 @@
   display: block;
 
   .video {
-    width: 320px;
+    width: 23vw;
     height: 100%;
     display: block;
     position: absolute;
@@ -29,7 +29,7 @@
     }
   }
   .text {
-    width: calc(100% - 340px);
+    width: 72vw;
     height: 100%;
     // display: table;
     position: absolute;
@@ -74,13 +74,23 @@
     }
   }
 }
+@media screen and (min-width: $mobile-width + 1) and (max-width: 960px) {
+  .chat {
+    .video {
+      width: 30vw !important
+    }
+    .text {
+      width: 63vw !important;
+    }
+  }
+}
 @media screen and (max-width: $mobile-width) {
   .chat {
     width: 100%;
     height: 100%;
     margin-top: 50px;
     .video {
-      width: 100%;
+      width: 100% !important;
       height: 40%;
       /*
         to set automatic 16:9 aspect ratio, set:

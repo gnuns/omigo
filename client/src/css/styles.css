@@ -217,7 +217,7 @@ strong {
   margin-top: 25px;
   display: block; }
   .chat .video {
-    width: 320px;
+    width: 23vw;
     height: 100%;
     display: block;
     position: absolute;
@@ -235,7 +235,7 @@ strong {
       bottom: 0px;
       left: 0px; }
   .chat .text {
-    width: calc(100% - 340px);
+    width: 72vw;
     height: 100%;
     position: absolute;
     background-color: #fff;
@@ -273,13 +273,19 @@ strong {
         color: #fff;
         font-size: 0.95em; }
 
+@media screen and (min-width: 576px) and (max-width: 960px) {
+  .chat .video {
+    width: 30vw !important; }
+  .chat .text {
+    width: 63vw !important; } }
+
 @media screen and (max-width: 575px) {
   .chat {
     width: 100%;
     height: 100%;
     margin-top: 50px; }
     .chat .video {
-      width: 100%;
+      width: 100% !important;
       height: 40%;
       /*
         to set automatic 16:9 aspect ratio, set:
