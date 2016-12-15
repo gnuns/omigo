@@ -5,7 +5,7 @@ html, body {
 }
 body {
   background-color: $lightone;
-  font-family: 'Open Sans', sans-serif !important;
+  font-family: $default-font !important;
 }
 a {
   text-decoration: none;
@@ -19,7 +19,6 @@ strong {
   width: calc(100% - 40px);
   right: 20px;
   left: 20px;
-  // max-width: 1280px;
   position: absolute;
   margin: auto;
   display: block;

@@ -27,6 +27,8 @@
 }
 @media screen and (max-width: $mobile-width) {
   .header {
+    position: fixed;
+    z-index: 10000;
     .online-count {
       display: none;
     }

@@ -52,7 +52,7 @@ html, body {
 
 body {
   background-color: #FDFDFD;
-  font-family: 'Open Sans', sans-serif !important; }
+  font-family: "Open Sans", sans-serif !important; }
 
 a {
   text-decoration: none;
@@ -199,12 +199,15 @@ strong {
     font-weight: 200; }
 
 @media screen and (max-width: 575px) {
-  .header .online-count {
-    display: none; }
-  .header button {
-    float: right;
-    margin-top: 2.5px;
-    font-size: 1em; } }
+  .header {
+    position: fixed;
+    z-index: 10000; }
+    .header .online-count {
+      display: none; }
+    .header button {
+      float: right;
+      margin-top: 2.5px;
+      font-size: 1em; } }
 
 .chat {
   width: 100%;
@@ -238,13 +241,43 @@ strong {
     background-color: #fff;
     border-radius: 3px;
     bottom: 0px;
-    right: 0px; }
+    right: 0px;
+    overflow: hidden; }
+    .chat .text .write-box {
+      position: relative;
+      width: 95%;
+      border-top: 2px solid #EEEEEE;
+      height: 110px;
+      margin: auto;
+      top: 100%;
+      margin-top: -110px;
+      overflow: hidden; }
+      .chat .text .write-box textarea {
+        font-family: "Open Sans", sans-serif;
+        border: none 0px;
+        outline: 0;
+        width: 80%;
+        resize: none;
+        padding-top: 10px;
+        height: 100px;
+        float: left; }
+        .chat .text .write-box textarea:focus {
+          border: none 0px;
+          outline: 0; }
+      .chat .text .write-box button {
+        float: right;
+        margin-right: 5px;
+        margin-top: 20px;
+        padding: 20px;
+        opacity: .98;
+        color: #fff;
+        font-size: 0.95em; }
 
 @media screen and (max-width: 575px) {
   .chat {
     width: 100%;
     height: 100%;
-    margin-top: 0px; }
+    margin-top: 50px; }
     .chat .video {
       width: 100%;
       height: 40%;
@@ -274,4 +307,16 @@ strong {
     bottom: 0px !important;
     left: 0px !important;
     right: 0px !important;
-    border-radius: 0px !important; } }
+    border-radius: 0px !important; }
+    .text .write-box {
+      height: 60px !important;
+      margin-top: -60px !important; }
+      .text .write-box textarea {
+        height: 50px !important;
+        width: 100% !important;
+        position: absolute; }
+      .text .write-box button {
+        float: right;
+        margin-right: 0px;
+        margin-top: 10px !important;
+        padding: 10px !important; } }

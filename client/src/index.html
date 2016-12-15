@@ -4,12 +4,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="theme-color" content="#3F4343">
+  <meta name="msapplication-navbutton-color" content="#3F4343">
+  <meta name="apple-mobile-web-app-status-bar-style" content="#3F4343">
   <title>omigo</title>
   <!--build:css css/styles.min.css-->
   <link rel="stylesheet" href="css/styles.css">
   <!--endbuild-->
 </head>
-<body>
+<body id="body">
   <div class="header">
     <div class="container">
       <div class="logo">
@@ -31,7 +36,8 @@
           <div class="conversation-box">
           </div>
           <div class="write-box">
-
+            <textarea name="name"></textarea>
+            <button class="btn" type="button" name="button">send</button>
           </div>
       </div>
     </div>
