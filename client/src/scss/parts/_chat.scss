@@ -111,32 +111,48 @@
         padding-top: 16.875%;
       }
     }
-  }
-  .text {
-    width: 100% !important;
-    height: 60% !important;
-    position: absolute !important;
-    background-color: #fff !important;
-    border-radius: $default-radius !important;
-    top:auto !important;
-    bottom: 0px !important;
-    left: 0px !important;
-    right: 0px !important;
-    border-radius: 0px !important;
+    .text {
+      width: 100% !important;
+      height: 60% !important;
+      position: absolute !important;
+      background-color: #fff !important;
+      border-radius: $default-radius !important;
+      top:auto !important;
+      bottom: 0px !important;
+      left: 0px !important;
+      right: 0px !important;
+      border-radius: 0px !important;
 
-    .write-box {
-      height: 60px !important;
-      margin-top: -60px !important;
-      textarea {
-        height: 50px !important;
-        width: 100% !important;
-        position: absolute;
+      .write-box {
+        height: 60px !important;
+        margin-top: -60px !important;
+        textarea {
+          height: 50px !important;
+          width: 100% !important;
+          position: absolute;
+        }
+        button {
+          float: right;
+          margin-right: 0px;
+          margin-top:10px !important;
+          padding: 10px !important;
+        }
       }
-      button {
-        float: right;
-        margin-right: 0px;
-        margin-top:10px !important;
-        padding: 10px !important;
+    }
+  }
+  @media screen and (max-height: 260px) {
+    .chat {
+      .video {
+        .stranger {
+          z-index: 1000 !important;
+          width: 30% !important;
+          height: 0px !important;
+          bottom: 10px !important;
+          left: 10px !important;
+          right: auto !important;
+          top: auto !important;
+          padding-top: 16.875% !important;
+        }
       }
     }
   }
