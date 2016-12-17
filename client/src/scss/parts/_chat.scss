@@ -57,6 +57,25 @@
         &.syslog {
           padding-top: 5px;
         }
+        &.userlog {
+          .name {
+            font-weight: 600;
+            &::after {
+              color: $darkgray;
+              content: ':';
+            }
+          }
+          &.stranger {
+            .name {
+              color: $green;
+            }
+          }
+          &.me {
+            .name {
+              color: $darkgray;
+            }
+          }
+        }
       }
     }
     .write-box {
@@ -143,7 +162,13 @@
       left: 0px !important;
       right: 0px !important;
       border-radius: 0px !important;
-
+      .conversation-box {
+        position: absolute;
+        top: 0px;
+        height: calc(100% - 70px);
+        margin-top: 5px;
+        margin-bottom: 5px;
+      }
       .write-box {
         height: 60px !important;
         margin-top: -60px !important;
