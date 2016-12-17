@@ -38,6 +38,27 @@
     bottom: 0px;
     right: 0px;
     overflow: hidden;
+    .conversation-box {
+      position: absolute;
+      top: 0px;
+      height: calc(100% - 130px);
+      width: 95%;
+      margin-left: 2.5%;
+      margin-right: 2.5%;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      overflow-y: auto;
+      overflow-x: hidden;
+      color: $darkgray;
+      font-size: 0.95em;
+
+      p {
+        padding-top: 10px;
+        &.syslog {
+          padding-top: 5px;
+        }
+      }
+    }
     .write-box {
       position: relative;
       width: 95%;
