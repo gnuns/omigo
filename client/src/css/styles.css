@@ -259,9 +259,11 @@ strong {
       color: #3F4343;
       font-size: 0.95em; }
       .chat .text .conversation-box p {
-        padding-top: 10px; }
+        margin-bottom: 5px;
+        padding-top: 5px; }
         .chat .text .conversation-box p.syslog {
-          padding-top: 5px; }
+          padding-top: 5px;
+          margin-bottom: 0px; }
         .chat .text .conversation-box p.userlog .name {
           font-weight: 600; }
           .chat .text .conversation-box p.userlog .name::after {
@@ -341,13 +343,37 @@ strong {
       bottom: 0px !important;
       left: 0px !important;
       right: 0px !important;
-      border-radius: 0px !important; }
+      border-radius: 0px !important;
+      background-color: #EEEEEE !important; }
       .chat .text .conversation-box {
         position: absolute;
         top: 0px;
         height: calc(100% - 70px);
         margin-top: 5px;
         margin-bottom: 5px; }
+        .chat .text .conversation-box .syslog {
+          width: 100%;
+          text-align: center;
+          display: block;
+          clear: both;
+          margin-top: 5px; }
+        .chat .text .conversation-box .userlog {
+          max-width: 80%;
+          clear: both;
+          padding: 12px 10px;
+          font-size: .9em;
+          background-color: #fff;
+          margin-bottom: 8px;
+          display: block; }
+          .chat .text .conversation-box .userlog .name {
+            display: none; }
+          .chat .text .conversation-box .userlog.stranger {
+            float: left;
+            border-left: 4px solid #80CC47;
+            border-radius: 0px 3px 3px 0px; }
+          .chat .text .conversation-box .userlog.me {
+            float: right;
+            border-right: 4px solid #3F4343; }
       .chat .text .write-box {
         height: 60px !important;
         margin-top: -60px !important; }

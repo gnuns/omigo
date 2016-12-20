@@ -53,9 +53,11 @@
       font-size: 0.95em;
 
       p {
-        padding-top: 10px;
+        margin-bottom: 5px;
+        padding-top: 5px;
         &.syslog {
           padding-top: 5px;
+          margin-bottom: 0px;
         }
         &.userlog {
           .name {
@@ -162,12 +164,43 @@
       left: 0px !important;
       right: 0px !important;
       border-radius: 0px !important;
+      background-color: $lightgray !important;
       .conversation-box {
         position: absolute;
         top: 0px;
         height: calc(100% - 70px);
         margin-top: 5px;
         margin-bottom: 5px;
+        // background-color: $lightgray;
+        .syslog {
+          width: 100%;
+          text-align: center;
+          display: block;
+          clear: both;
+          margin-top: 5px;
+        }
+        .userlog {
+          max-width: 80%;
+          clear: both;
+          padding: 12px 10px;
+          font-size: .9em;
+          background-color: #fff;
+          margin-bottom: 8px;
+          display: block;
+          .name {
+            display: none;
+          }
+          &.stranger {
+            float: left;
+            border-left: 4px solid $green;
+            border-radius: 0px $default-radius $default-radius 0px ;
+          }
+          &.me {
+            float: right;
+            border-right: 4px solid $darkgray;
+
+          }
+        }
       }
       .write-box {
         height: 60px !important;
