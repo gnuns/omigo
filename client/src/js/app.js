@@ -1,3 +1,10 @@
+/*********************************************
+ * by Gabriel 'Hezag' Nunes
+ * website: http://multiverso.me
+ * email: gabriel (at) multiverso (dot) me
+ * github: https://github.com/gnuns
+ **********************************************/
+
 (function(){
   // scroll down on resize
   window.onresize = function(event) {
