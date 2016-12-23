@@ -311,7 +311,9 @@ strong {
   .chat .video {
     width: 30vw !important; }
   .chat .text {
-    width: 63vw !important; } }
+    width: 63vw !important; }
+  .chat.text-only .text {
+    width: 100% !important; } }
 
 @media screen and (max-width: 575px) {
   .chat {

@@ -132,6 +132,11 @@
     .text {
       width: 63vw !important;
     }
+    &.text-only {
+      .text {
+        width: 100% !important;
+      }
+    }
   }
 }
 @media screen and (max-width: $mobile-width) {
@@ -144,7 +149,6 @@
         top: 50px;
         height: 100% !important;
       }
-
     }
     .video {
       width: 100% !important;
