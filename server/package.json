@@ -23,8 +23,11 @@
   },
   "homepage": "https://github.com/gnuns/omigo#readme",
   "dependencies": {
-    "chai": "^3.5.0",
-    "mocha": "^3.1.2",
+    "express": "^4.14.0",
     "socket.io": "^1.6.0"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.2.0"
   }
 }
