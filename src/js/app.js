@@ -6,11 +6,14 @@
  **********************************************/
 
 (function(){
+  window.onresize = onresize;
+
   // scroll down on resize
-  window.onresize = function(event) {
+  function onresize(event) {
     var body = document.getElementById('body');
     body.scrollTop = body.scrollHeight;
     var conversationBox = document.getElementById('conversation-box');
     conversationBox.scrollTop = conversationBox.scrollHeight;
-  };
+  }
+
 })();

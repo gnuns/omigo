@@ -33,8 +33,8 @@ gulp.task('build', function(){
 
   return gulp.src('src/*.html')
     .pipe(useref())
-    .pipe(gulpIf('*.js', babel({presets: ['es2015']})))
-    .pipe(gulpIf('*.js', uglify()))
+    .pipe(gulpIf(['*.js', '!vendor.*'], babel({presets: ['es2015']})))
+    .pipe(gulpIf(['*.js', '!vendor.*'], uglify()))
     .pipe(gulpIf('*.css', cssnano()))
     .pipe(gulp.dest('dist'));
 });
