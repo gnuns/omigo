@@ -2,7 +2,7 @@
   "name": "omigo-server",
   "version": "1.0.0",
   "description": "",
-  "main": "server.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -23,6 +23,7 @@
   "homepage": "https://github.com/gnuns/omigo-server#readme",
   "dependencies": {
     "express": "^4.14.0",
+    "lodash": "^4.17.4",
     "socket.io": "^1.7.2"
   },
   "devDependencies": {
