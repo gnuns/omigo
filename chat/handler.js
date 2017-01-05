@@ -10,12 +10,12 @@ let io;
 function init(_io) {
   io = _io;
   io.on('connection', onConnet);
-  setInterval(refreshConsole, 700)
+  setInterval(refreshConsole, 700);
 }
 
 function refreshConsole() {
   process.stdout.write('Clients: ' + clientList.length +
-                       '| Waiting: ' + waitingList.length + '\r');
+                       ' | Waiting: ' + waitingList.length + '\r');
 }
 
 function onConnet(socket) {
@@ -40,6 +40,8 @@ function onMessage(client, msg) {
 }
 
 function onRequestNext(client) {
+  client.disconnectFromPartner();
+  client.sendSystemInfo('waiting_partner');
   let partner = false;
   for (let possiblePartner of waitingList) {
     if (client.isValidPartner(possiblePartner)) {

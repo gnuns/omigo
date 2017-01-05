@@ -32,6 +32,7 @@ function client(socket) {
 
   function disconnectFromPartner() {
     if (currentPartner) {
+      currentPartner.waitNext();
       currentPartner.sendSystemInfo('partner_disconnected');
     }
     currentPartner = false;
@@ -52,6 +53,7 @@ function client(socket) {
   }
 
   function waitNext() {
+    currentPartner = false;
     isWaiting = true;
   }
 
