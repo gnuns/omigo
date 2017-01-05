@@ -7,15 +7,20 @@ let clientList = [];
 let waitingList = [];
 let io;
 
-function init(_io) {
+function init(_io, express) {
   io = _io;
   io.on('connection', onConnet);
+  express.get('/', getServerInfo);
   setInterval(refreshConsole, 700);
 }
 
 function refreshConsole() {
   process.stdout.write('Clients: ' + clientList.length +
                        ' | Waiting: ' + waitingList.length + '\r');
+}
+
+function getServerInfo(req, res) {
+  res.json({'usersOnline': clientList.length});
 }
 
 function onConnet(socket) {

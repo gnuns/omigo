@@ -1,6 +1,6 @@
 'use strict';
-const app         = require('express');
-const http        = require('http').Server(app);
+const express     = require('express')();
+const http        = require('http').Server(express);
 const io          = require('socket.io')(http);
 const config      = require('./config');
 const chatHandler = require('./chat/handler');
@@ -8,8 +8,7 @@ const chatHandler = require('./chat/handler');
 start();
 
 function start() {
-  chatHandler.init(io);
-
+  chatHandler.init(io, express);
   http.listen(config.port, function() {
     console.log('listening on', config.port);
   });
