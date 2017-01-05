@@ -21,14 +21,14 @@
       <div class="logo">
         <img src="img/logo.png" width="75px" alt="Omigo">
       </div>
-      <button class="btn green" type="button" name="action">start</button>
+      <button class="btn green" type="button" name="action" id="control" data-current="start">start</button>
       <div class="online-count">
-        <strong>15</strong> online now
+        <strong>users</strong> online now
       </div>
     </div>
   </div>
   <div class="container main">
-    <div class="chat text-only">
+    <div class="chat">
       <div class="video">
         <div class="stranger  basic-shadow"></div>
         <div class="me  basic-shadow"></div>
@@ -36,7 +36,7 @@
       <div class="text basic-shadow">
           <div class="conversation-box" id="conversation-box">
             <!-- WELCOME MESSAGE -->
-            <!-- <p class="syslog"><strong>Hi, welcome to <span class="special">omigo</span>!</strong></p>
+            <p class="syslog"><strong>Hi, welcome to <span class="special">omigo</span>!</strong></p>
             <p></p>
             <p></p>
             <p class="syslog"><strong>omigo</strong> (oh·me·goal) is a great way to meet new friends.</p>
@@ -46,22 +46,8 @@
             <p class="syslog">If you can't be nice, please don't use omigo.</p>
             <p></p>
             <p></p>
-            <p class="syslog"><strong>Click on the <span class="special">start</span> button (on top bar) or press <span class="special">F1</span> and <i>have a nice chatting!</i></strong></p>
-            <p></p> -->
-
-            <!-- EXAMPLE CHAT MESSAGES -->
-            <p class="userlog stranger">
-              <span class="name">Stranger</span> hi, do you like potatoes?
-            </p>
-            <p class="userlog me">
-              <span class="name">You</span> No! I hate it!
-            </p>
-            <p class="syslog">
-              <strong>Sorry. stranger has disconnected.</strong>
-            </p>
-            <p class="syslog">
-              <strong>Click on <span class="special">new</span> to start a new chat.</strong>
-            </p>
+            <p class="syslog"><strong>Click on the <span class="special">start</span> button (on top bar) or press <span class="special">ESC</span> and <i>have a nice chatting!</i></strong></p>
+            <p></p>
           </div>
           <div class="write-box">
             <textarea name="message"></textarea>

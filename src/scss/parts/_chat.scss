@@ -61,11 +61,11 @@
       font-size: 0.95em;
 
       p {
-        margin-bottom: 5px;
         padding-top: 5px;
         &.syslog {
-          padding-top: 5px;
-          margin-bottom: 0px;
+          padding-top: 2px;
+          margin-bottom: 5px;
+          margin-top: 5px;
         }
         &.userlog {
           .name {

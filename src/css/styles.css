@@ -51,14 +51,15 @@ html, body {
 
 body {
   background-color: #FDFDFD;
-  font-family: "Open Sans", sans-serif !important; }
+  font-family: "Open Sans", sans-serif !important;
+  text-rendering: optimizeLegibility !important; }
 
 a {
   text-decoration: none;
   outline: 0; }
 
 strong {
-  font-weight: 700; }
+  font-weight: 600; }
 
 .container {
   width: 100%;
@@ -146,9 +147,9 @@ strong {
   float: left; }
 
 .basic-shadow {
-  -webkit-box-shadow: 1px 2px 4px 0px rgba(0, 0, 0, 0.15);
-  -moz-box-shadow: 1px 2px 4px 0px rgba(0, 0, 0, 0.15);
-  box-shadow: 1px 2px 4px 0px rgba(0, 0, 0, 0.15); }
+  -webkit-box-shadow: 1px 1px 4px 0px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 1px 1px 4px 0px rgba(0, 0, 0, 0.15);
+  box-shadow: 1px 1px 4px 0px rgba(0, 0, 0, 0.15); }
 
 .special {
   color: #80CC47; }
@@ -186,7 +187,8 @@ strong {
     float: left;
     margin-right: 15px;
     margin-top: 3px;
-    width: 72px; }
+    width: 72px;
+    cursor: pointer; }
   .header button {
     margin-top: 5px;
     font-size: 0.9em; }
@@ -263,11 +265,11 @@ strong {
       color: #3F4343;
       font-size: 0.95em; }
       .chat .text .conversation-box p {
-        margin-bottom: 5px;
         padding-top: 5px; }
         .chat .text .conversation-box p.syslog {
-          padding-top: 5px;
-          margin-bottom: 0px; }
+          padding-top: 2px;
+          margin-bottom: 5px;
+          margin-top: 5px; }
         .chat .text .conversation-box p.userlog .name {
           font-weight: 600; }
           .chat .text .conversation-box p.userlog .name::after {

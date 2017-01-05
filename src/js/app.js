@@ -7,6 +7,7 @@
 
 (function(){
   window.onresize = onresize;
+  window.onbeforeunload = () => 'Are you sure you want to leave?';
 
   // scroll down on resize
   function onresize(event) {

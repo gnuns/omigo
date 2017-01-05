@@ -6,13 +6,14 @@ html, body {
 body {
   background-color: $lightone;
   font-family: $default-font !important;
+  text-rendering: optimizeLegibility !important;
 }
 a {
   text-decoration: none;
   outline: 0;
 }
 strong {
-  font-weight: 700;
+  font-weight: 600;
 }
 .container {
   width: 100%;
