@@ -93,5 +93,6 @@ window.chatBox = (function() {
     $userlog.append('<span class="name">Stranger</span>');
     $userlog.append(msgText);
     $box.append($userlog);
+    $box.scrollTop($box.prop('scrollHeight'));
   }
 })();
