@@ -10,17 +10,24 @@ let io;
 function init(_io, express) {
   io = _io;
   io.on('connection', onConnet);
+  express.use(expressConfigs);
   express.get('/', getServerInfo);
   setInterval(refreshConsole, 700);
 }
 
-function refreshConsole() {
-  process.stdout.write('Clients: ' + clientList.length +
-                       ' | Waiting: ' + waitingList.length + '\r');
+function expressConfigs(req, res, next) {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+  next();
 }
 
 function getServerInfo(req, res) {
   res.json({'usersOnline': clientList.length});
+}
+
+function refreshConsole() {
+  process.stdout.write('Clients: ' + clientList.length +
+  ' | Waiting: ' + waitingList.length + '\r');
 }
 
 function onConnet(socket) {
