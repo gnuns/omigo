@@ -2,21 +2,23 @@
 module.exports = client;
 
 function client(socket) {
-  let id = socket.id;
+  let {id} = socket;
   let partnersMap = {};
   let currentPartner = false;
   let isWaiting = true;
 
   return {
-    id: id,
-    socket: socket,
-    setPartnerInfo: setPartnerInfo,
-    isValidPartner: isValidPartner,
-    isWaiting: () => isWaiting,
-    waitNext: waitNext,
-    sendSystemInfo: sendSystemInfo,
-    sendMessageToPartner: sendMessageToPartner,
-    disconnectFromPartner: disconnectFromPartner
+    id,
+    socket,
+    setPartnerInfo,
+    isValidPartner,
+    waitNext,
+    sendSystemInfo,
+    sendMessageToPartner,
+    disconnectFromPartner,
+    isWaiting() {
+      return isWaiting;
+    }
   };
 
   function setPartnerInfo(partner) {
@@ -40,8 +42,8 @@ function client(socket) {
 
   function sendMessageToPartner(message) {
     let msg = {
-      'from': 'partner',
-      'content': message
+      from: 'partner',
+      content: message
     };
     if (currentPartner) {
       socket.broadcast.to(currentPartner.id).emit('msg', msg);
@@ -65,7 +67,7 @@ function client(socket) {
         let timeSinceLastChat = (now - partnersMap[partner.id].lastChatTimestamp);
         // if timeSinceLastChat > 5 minutes
         return (timeSinceLastChat > 300);
-      } else return true;
-    } else return false;
+      } return true;
+    } return false;
   }
 }
