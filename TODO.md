@@ -1,2 +1,3 @@
 - Add mode switch button (text/video)
 - Implement video chat client
+- multi-language system
