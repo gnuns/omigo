@@ -1,9 +1,9 @@
 'use strict';
-const express     = require('express')();
-const http        = require('http').Server(express);
-const io          = require('socket.io')(http);
-const config      = require('./config');
-const chatHandler = require('./chat/handler');
+const express = require('express')();
+const http = require('http').Server(express);
+const io = require('socket.io')(http);
+const config = require('./config');
+const chatHandler = require('./chat/handler')();
 
 start();
 

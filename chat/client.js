@@ -16,9 +16,7 @@ function client(socket) {
     sendSystemInfo,
     sendMessageToPartner,
     disconnectFromPartner,
-    isWaiting() {
-      return isWaiting;
-    }
+    isWaiting: () => isWaiting
   };
 
   function setPartnerInfo(partner) {

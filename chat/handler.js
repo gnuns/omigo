@@ -1,9 +1,10 @@
 'use strict';
-module.exports = handler();
+module.exports = chatHandler;
 
-function handler() {
-  const _       = require('lodash');
-  const Client  = require('./client');
+const _ = require('lodash');
+const Client = require('./client');
+
+function chatHandler() {
 
   let clientList  = [];
   let waitingList = [];
