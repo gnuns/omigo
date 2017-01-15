@@ -93,6 +93,9 @@
           padding-top: 2px;
           margin-bottom: 5px;
           margin-top: 5px;
+          &.error {
+            color: $red !important;
+          }
         }
         &.userlog {
           .name {
