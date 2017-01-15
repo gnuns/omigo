@@ -28,15 +28,20 @@ window.chatClient = (function() {
 
   function nextPartner() {
     chatBox.clear();
-    hasPartner = false;
-    peer = null;
-    partnerIsStreaming = false;
+    disconnectFromPartner();
     $('.video>.stranger').html('');
     socket.emit('next');
   }
 
   function sendLocalInfo() {
     socket.emit('info', {isVideoChat: isVideoChat})
+  }
+
+  function disconnectFromPartner() {
+    hasPartner = false;
+    if (peer && peer.destroy) peer.destroy();
+    peer = null;
+    partnerIsStreaming = false;
   }
 
   function tryVideoChat() {
@@ -68,7 +73,7 @@ window.chatClient = (function() {
         hasPartner = true;
         break;
       case 'partner_disconnected':
-        hasPartner = false;
+        disconnectFromPartner();
         break;
       case 'waiting_partner':
         sendLocalInfo();
