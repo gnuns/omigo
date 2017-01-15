@@ -12,7 +12,6 @@ window.chatBox = (function() {
 
   $('.write-box>.btn').on('click', sendMessage);
   $controlBtn.on('click', control);
-  // $('.logo').on('click', () => window.location.reload());
 
   $message.on('keydown', function(e) {
     if (e.which == 13) sendMessage();
@@ -83,6 +82,9 @@ window.chatBox = (function() {
       case 'partner_disconnected':
         $syslog.append('<p class="syslog"><strong>Sorry. stranger has disconnected.</strong></p>');
         $syslog.append('<p class="syslog"><strong>Click on <span class="special">next</span> to start a new chat.</strong></p>');
+        break;
+      case 'server_disconnection':
+        $syslog.append('<p class="syslog error"><strong>System error! Please refresh this page!</strong></p>');
         break;
       default:
         $syslog.append(code);

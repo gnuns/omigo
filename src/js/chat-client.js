@@ -18,6 +18,8 @@ window.chatClient = (function() {
   socket.on('videochat_init', handleVideoInit);
   socket.on('videochat_offer', handleVideoOffer);
   socket.on('videochat_offer_response', handleVideoOfferResponse);
+  socket.on('videochat_ice', processIce);
+  socket.on('disconnect', handleServerDisconnection);
 
   tryVideoChat();
 
@@ -35,6 +37,10 @@ window.chatClient = (function() {
 
   function sendLocalInfo() {
     socket.emit('info', {isVideoChat: isVideoChat})
+  }
+
+  function handleServerDisconnection() {
+    handleSysInfo('server_disconnection');
   }
 
   function disconnectFromPartner() {
@@ -95,71 +101,60 @@ window.chatClient = (function() {
   }
 
   function handleVideoInit() {
-    console.log('handleVideoInit')
     if (!isVideoChat || !localMediaStream) {
       return socket.emit('videochat_init', false);
     }
-    let peerConfig = {
-      initiator: true,
-      stream: localMediaStream,
-      trickle: false
-    };
-    peer = new SimplePeer(peerConfig);
-    peer.on('signal', function(signal) {
-      console.log('sending signal...');
-      socket.emit('videochat_init', signal);
-    });
-    peer.on('stream', function (stream) {
-      if (partnerIsStreaming) return false;
-      partnerIsStreaming = true;
-      let $strangerVideo = $('<video>');
-
-      $('.video>.stranger>video').remove();
-      $('.video>.stranger').append($strangerVideo);
-      $strangerVideo.attr('src', window.URL.createObjectURL(stream));
-      setTimeout(function () {
-        if ($strangerVideo[0].paused) {
-          $strangerVideo[0].play();
-        }
-      }, 200);
+    setupPeerConnection();
+    peer.offer(function (err, offer) {
+      socket.emit('videochat_init', offer);
     });
   }
 
   function handleVideoOffer(offer) {
-    console.log('handleVideoOffer')
     if (!isVideoChat || !localMediaStream) {
       return socket.emit('videochat_offer_ok', false);
     }
-    let peerConfig = {
-      stream: localMediaStream,
-      trickle: false
-    };
-    peer = new SimplePeer(peerConfig);
-    peer.signal(offer);
-    peer.on('signal', (signal) => {
-      console.log('sending signal...');
-      socket.emit('videochat_offer_ok', signal);
+    setupPeerConnection();
+    peer.handleOffer(offer, function (err) {
+      if (err) return;
+      peer.answer(function (err, answer) {
+          if (!err) socket.emit('videochat_offer_ok', answer);
+      });
     });
-    peer.on('stream', function (stream) {
+  }
+
+  function setupPeerConnection() {
+    peer = new PeerConnection();
+    peer.addStream(localMediaStream);
+    peer.on('addStream', function (event) {
+      let remoteMediaStream = event.stream;
       if (partnerIsStreaming) return false;
       partnerIsStreaming = true;
       let $strangerVideo = $('<video>');
 
       $('.video>.stranger>video').remove();
       $('.video>.stranger').append($strangerVideo);
-      $strangerVideo.attr('src', window.URL.createObjectURL(stream));
+      $strangerVideo.attr('src', window.URL.createObjectURL(remoteMediaStream));
       setTimeout(function () {
         if ($strangerVideo[0].paused) {
           $strangerVideo[0].play();
         }
       }, 200);
     });
+    peer.on('ice', function (candidate) {
+      socket.emit('videochat_ice', candidate);
+    });
   }
 
-  function handleVideoOfferResponse(res) {
-    console.log('handleVideoOfferResponse')
+  function handleVideoOfferResponse(answer) {
     if (peer) {
-      peer.signal(res);
+      peer.handleAnswer(answer);
+    }
+  }
+
+  function processIce(candidate) {
+    if (peer) {
+      peer.processIce(candidate);
     }
   }
 })();

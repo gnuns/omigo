@@ -292,6 +292,8 @@ strong {
           padding-top: 2px;
           margin-bottom: 5px;
           margin-top: 5px; }
+          .chat .text .conversation-box p.syslog.error {
+            color: #E14E46 !important; }
         .chat .text .conversation-box p.userlog .name {
           font-weight: 600; }
           .chat .text .conversation-box p.userlog .name::after {
