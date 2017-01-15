@@ -16,11 +16,11 @@
     var conversationBox = document.getElementById('conversation-box');
     conversationBox.scrollTop = conversationBox.scrollHeight;
   }
-  getOnlineCount();
-  setInterval(getOnlineCount, 5000);
-  
+  // getOnlineCount();
+  // setInterval(getOnlineCount, 5000);
+
   function getOnlineCount(){
-    $.getJSON('http://localhost:3000/', function(info) {
+    $.getJSON('http://192.168.0.16:3000/', function(info) {
       $('.online-count>strong').text(info.usersOnline);
     });
   }

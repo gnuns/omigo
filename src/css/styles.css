@@ -235,7 +235,15 @@ strong {
       border-radius: 3px;
       height: 49%;
       width: 100%;
-      position: absolute; }
+      position: absolute;
+      overflow: hidden; }
+      .chat .video .me video, .chat .video .stranger video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: absolute;
+        top: 0px;
+        left: 0px; }
     .chat .video .stranger {
       top: 0px;
       left: 0px; }

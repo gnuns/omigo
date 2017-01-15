@@ -1,3 +1,4 @@
 - Add mode switch button (text/video)
 - Implement video chat client
-- multi-language system
+- Multi-language system
+- Implement 'is typing...'

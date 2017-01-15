@@ -22,11 +22,7 @@ window.chatBox = (function() {
   });
 
 
-  return {
-    'clear': clear,
-    'writePartnerMessage': writePartnerMessage,
-    'writeSytemInfo': writeSytemInfo
-  };
+  return {clear, writePartnerMessage, writeSytemInfo, changeChatMode};
 
   function control(reset) {
     let current = $controlBtn.attr('data-current');
@@ -43,6 +39,14 @@ window.chatBox = (function() {
       $controlBtn.text('really?');
       $controlBtn.attr('data-current', 'really');
       $controlBtn.addClass('red');
+    }
+  }
+
+  function changeChatMode(isVideo) {
+    if (isVideo) {
+      $('.chat').removeClass('text-only');
+    } else {
+      $('.chat').addClass('text-only');
     }
   }
 
