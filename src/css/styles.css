@@ -237,13 +237,27 @@ strong {
       width: 100%;
       position: absolute;
       overflow: hidden; }
+      .chat .video .me.loading .load-canvas, .chat .video .stranger.loading .load-canvas {
+        display: flex; }
+      .chat .video .me .load-canvas, .chat .video .stranger .load-canvas {
+        display: none;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        background-color: #3F4343;
+        color: #80CC47;
+        z-index: 1; }
       .chat .video .me video, .chat .video .stranger video {
         width: 100%;
         height: 100%;
         object-fit: cover;
         position: absolute;
         top: 0px;
-        left: 0px; }
+        left: 0px;
+        z-index: 10; }
     .chat .video .stranger {
       top: 0px;
       left: 0px; }
@@ -342,6 +356,7 @@ strong {
       */
       border-radius: 0px !important; }
       .chat .video .stranger {
+        border-radius: 0px !important;
         width: 100%;
         height: 100%; }
       .chat .video .me {

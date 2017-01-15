@@ -29,7 +29,7 @@ window.chatClient = (function() {
   function nextPartner() {
     chatBox.clear();
     disconnectFromPartner();
-    $('.video>.stranger').html('');
+    $('.video>.stranger>video').remove();
     socket.emit('next');
   }
 
@@ -42,6 +42,7 @@ window.chatClient = (function() {
     if (peer && peer.destroy) peer.destroy();
     peer = null;
     partnerIsStreaming = false;
+    $('.video>.stranger').removeClass('loading');
   }
 
   function tryVideoChat() {
@@ -71,6 +72,7 @@ window.chatClient = (function() {
     switch (code) {
       case 'partner_connected':
         hasPartner = true;
+        $('.video>.stranger').addClass('loading');
         break;
       case 'partner_disconnected':
         disconnectFromPartner();
@@ -93,21 +95,26 @@ window.chatClient = (function() {
   }
 
   function handleVideoInit() {
+    console.log('handleVideoInit')
     if (!isVideoChat || !localMediaStream) {
       return socket.emit('videochat_init', false);
     }
     let peerConfig = {
       initiator: true,
-      stream: localMediaStream
+      stream: localMediaStream,
+      trickle: false
     };
     peer = new SimplePeer(peerConfig);
-    peer.on('signal', (signal) => socket.emit('videochat_init', signal));
+    peer.on('signal', function(signal) {
+      console.log('sending signal...');
+      socket.emit('videochat_init', signal);
+    });
     peer.on('stream', function (stream) {
       if (partnerIsStreaming) return false;
       partnerIsStreaming = true;
       let $strangerVideo = $('<video>');
 
-      $('.video>.stranger').html('');
+      $('.video>.stranger>video').remove();
       $('.video>.stranger').append($strangerVideo);
       $strangerVideo.attr('src', window.URL.createObjectURL(stream));
       setTimeout(function () {
@@ -119,21 +126,26 @@ window.chatClient = (function() {
   }
 
   function handleVideoOffer(offer) {
+    console.log('handleVideoOffer')
     if (!isVideoChat || !localMediaStream) {
       return socket.emit('videochat_offer_ok', false);
     }
     let peerConfig = {
-      stream: localMediaStream
+      stream: localMediaStream,
+      trickle: false
     };
     peer = new SimplePeer(peerConfig);
     peer.signal(offer);
-    peer.on('signal', (signal) => socket.emit('videochat_offer_ok', signal));
+    peer.on('signal', (signal) => {
+      console.log('sending signal...');
+      socket.emit('videochat_offer_ok', signal);
+    });
     peer.on('stream', function (stream) {
       if (partnerIsStreaming) return false;
       partnerIsStreaming = true;
       let $strangerVideo = $('<video>');
 
-      $('.video>.stranger').html('');
+      $('.video>.stranger>video').remove();
       $('.video>.stranger').append($strangerVideo);
       $strangerVideo.attr('src', window.URL.createObjectURL(stream));
       setTimeout(function () {
@@ -145,6 +157,7 @@ window.chatClient = (function() {
   }
 
   function handleVideoOfferResponse(res) {
+    console.log('handleVideoOfferResponse')
     if (peer) {
       peer.signal(res);
     }

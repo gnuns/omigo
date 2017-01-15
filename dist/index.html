@@ -17,7 +17,7 @@
   <div class="header">
     <div class="container">
       <div class="logo">
-        <img src="img/logo.png" width="75px" alt="Omigo">
+        <a href="./"><img src="img/logo.png" width="75px" alt="Omigo"></a>
       </div>
       <button class="btn green" type="button" name="action" id="control" data-current="start">start</button>
       <div class="online-count">
@@ -28,7 +28,14 @@
   <div class="container main">
     <div class="chat text-only">
       <div class="video">
-        <div class="stranger  basic-shadow"></div>
+        <div class="stranger basic-shadow">
+          <div class="load-canvas">
+            <div class="spinner">
+              <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+              <span class="sr-only">Loading...</span>
+            </div>
+          </div>
+        </div>
         <div class="me  basic-shadow"></div>
       </div>
       <div class="text basic-shadow">

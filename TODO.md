@@ -1,4 +1,4 @@
 - Add mode switch button (text/video)
-- Implement video chat client
 - Multi-language system
+- Loading on webcam
 - Implement 'is typing...'

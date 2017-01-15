@@ -12,7 +12,7 @@ window.chatBox = (function() {
 
   $('.write-box>.btn').on('click', sendMessage);
   $controlBtn.on('click', control);
-  $('.logo').on('click', () => window.location.reload());
+  // $('.logo').on('click', () => window.location.reload());
 
   $message.on('keydown', function(e) {
     if (e.which == 13) sendMessage();
@@ -89,6 +89,7 @@ window.chatBox = (function() {
         break;
     }
     $box.append($syslog);
+    $box.scrollTop($box.prop('scrollHeight'));
   }
 
   function writePartnerMessage(msg) {
