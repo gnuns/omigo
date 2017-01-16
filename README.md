@@ -1,3 +1,31 @@
-## omigo
+<p align="center"><img width="480" alt="A-Frame" src="http://i.imgur.com/0Rjl4RZ.png"></p>
 
-***WIP***
+<p align="center"><b>A mobile compatible anonymous random chat using socket.io and WebRTC</b></p>
+
+## Screenshots
+[...]
+## Building
+Omigo consists of two parts: the server, which establishes and control the connections between peers, and the client, the front-end user interface.
+
+#### Building the client
+
+```sh
+$ npm install -g gulp
+$ git clone https://github.com/gnuns/omigo
+$ cd omigo/client
+$ npm install
+$ gulp build # will build on the dist/ folder
+```
+
+#### Building the server
+
+```sh
+$ git clone https://github.com/gnuns/omigo
+$ cd omigo/server
+$ npm install
+$ npm start # check the server/config.json file
+```
+
+## License
+
+This program is free software and is distributed under an [MIT License](LICENSE).
