@@ -4,9 +4,12 @@ module.exports = client;
 function client(socket) {
   let {id} = socket;
   let partnersMap = {};
+  let videoHandshake = {};
   let currentPartner = false;
   let isWaiting = true;
+  let chatType;
 
+  resetVideoHandshake();
   return {
     id,
     socket,
@@ -16,18 +19,38 @@ function client(socket) {
     sendSystemInfo,
     sendMessageToPartner,
     disconnectFromPartner,
-    isWaiting: () => isWaiting
+    requestVideoInit,
+    sendVideoOffer,
+    sendVideoOfferResponse,
+    sendVideoICE,
+    setChatType,
+    isWaiting: () => isWaiting,
+    getPartner: () => currentPartner,
+    getChatType: () => chatType
   };
 
   function setPartnerInfo(partner) {
-    let currentTimestamp = Math.floor(Date.now() / 1000);
     if (!partnersMap[partner.id]) partnersMap[partner.id] = {chatsCount:0};
+
+    let currentTimestamp = Math.floor(Date.now() / 1000);
+
     partnersMap[partner.id].lastChatTimestamp = currentTimestamp;
     partnersMap[partner.id].chatsCount++;
+
     isWaiting = false;
-    partner.sendSystemInfo('partner_connected');
-    // console.log(socket.id, 'is the new partner of', partner.id);
     currentPartner = partner;
+    partner.sendSystemInfo('partner_connected');
+  }
+
+  function setChatType(type) {
+    chatType = type;
+  }
+
+  function resetVideoHandshake() {
+    videoHandshake = {
+      offerSent: false,
+      offerResponseSent: false
+    };
   }
 
   function disconnectFromPartner() {
@@ -35,6 +58,7 @@ function client(socket) {
       currentPartner.waitNext();
       currentPartner.sendSystemInfo('partner_disconnected');
     }
+    resetVideoHandshake();
     currentPartner = false;
   }
 
@@ -52,6 +76,32 @@ function client(socket) {
     socket.emit('sysinfo', code);
   }
 
+  function requestVideoInit() {
+    socket.emit('videochat_init');
+  }
+
+  function sendVideoOffer(data) {
+    if (!videoHandshake.offerSent) {
+      socket.emit('videochat_offer', data);
+      videoHandshake.offerSent = true;
+      return true;
+    }
+    return false;
+  }
+
+  function sendVideoOfferResponse(res) {
+    if (!videoHandshake.offerResponseSent) {
+      socket.emit('videochat_offer_response', res);
+      videoHandshake.offerResponseSent = true;
+      return true;
+    }
+    return false;
+  }
+
+  function sendVideoICE(candidate) {
+    socket.emit('videochat_ice', candidate);
+  }
+
   function waitNext() {
     currentPartner = false;
     isWaiting = true;
@@ -59,6 +109,7 @@ function client(socket) {
 
   function isValidPartner(partner) {
     if (partner.id !== socket.id && partner.isWaiting()) {
+      if (partner.getChatType() !== chatType) return false;
       let isReturningPartner = !!partnersMap[partner.id];
       if (isReturningPartner) {
         let now = Math.floor(Date.now() / 1000);
