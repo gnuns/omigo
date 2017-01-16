@@ -6,7 +6,7 @@
  **********************************************/
 'use strict';
 window.chatClient = (function() {
-  const socket = io('https://192.168.0.16/');
+  const socket = io(window.serverURI);
   let hasPartner = false;
   let isVideoChat = false;
   let partnerIsStreaming = false;
