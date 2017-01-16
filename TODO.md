@@ -1,3 +1,0 @@
-- Add mode switch button (text/video)
-- Multi-language system
-- Implement 'is typing...'

@@ -26,6 +26,14 @@ $ npm install
 $ npm start # check the server/config.json file
 ```
 
+## Features
+- [x] Text chat
+- [x] Video chat
+- [x] Mobile compatibility
+- [ ] Mode switch button (text/video)
+- [ ] Multi-language
+- [ ] 'Stranger is typing...'
+
 ## License
 
 This program is free software and is distributed under an [MIT License](LICENSE).
