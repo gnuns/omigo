@@ -1,1 +1,0 @@
-- Implement multithreading (use redis, maybe?)
