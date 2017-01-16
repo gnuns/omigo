@@ -25,7 +25,7 @@ gulp.task('browserSync', function() {
 gulp.task('build', function(){
   gulp.start('sass');
 
-  gulp.src('src/fonts/**/*')
+  gulp.src('node_modules/font-awesome/fonts/*.+(eot|ttf|svg|woff|woff2|otf)')
   .pipe(gulp.dest('dist/fonts'));
 
   gulp.src('src/img/**/*.+(png|jpg|jpeg|gif|svg)')
