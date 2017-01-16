@@ -1,4 +1,3 @@
 - Add mode switch button (text/video)
 - Multi-language system
-- Loading on webcam
 - Implement 'is typing...'

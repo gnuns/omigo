@@ -45,7 +45,7 @@ window.chatClient = (function() {
 
   function disconnectFromPartner() {
     hasPartner = false;
-    if (peer && peer.destroy) peer.destroy();
+    if (peer && peer.destroy) peer.close();
     peer = null;
     partnerIsStreaming = false;
     $('.video>.stranger').removeClass('loading');
@@ -59,7 +59,7 @@ window.chatClient = (function() {
       sendLocalInfo();
       chatBox.changeChatMode(true);
 
-      let $myVideo = $('<video>');
+      let $myVideo = $('<video muted>');
 
       $('.video>.me').html('');
       $('.video>.me').append($myVideo);
@@ -124,7 +124,13 @@ window.chatClient = (function() {
   }
 
   function setupPeerConnection() {
-    peer = new PeerConnection();
+    peer = new PeerConnection({
+      'iceServers': [{'url': 'stun:stun.l.google.com:19302'},
+                     {'url': 'stun:stun1.l.google.com:19302'},
+                     {'url': 'stun:stun2.l.google.com:19302'},
+                     {'url': 'stun:stun3.l.google.com:19302'},
+                     {'url': 'stun:stun4.l.google.com:19302'}]});
+
     peer.addStream(localMediaStream);
     peer.on('addStream', function (event) {
       let remoteMediaStream = event.stream;
