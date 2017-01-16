@@ -1,0 +1,14 @@
+.pull-right {
+  float: right;
+}
+.pull-left {
+  float: left;
+}
+.basic-shadow {
+  -webkit-box-shadow: 1px 1px 4px 0px rgba(0,0,0,0.15);
+  -moz-box-shadow: 1px 1px 4px 0px rgba(0,0,0,0.15);
+  box-shadow: 1px 1px 4px 0px rgba(0,0,0,0.15);
+}
+.special {
+  color: $green;
+}

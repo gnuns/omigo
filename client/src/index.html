@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="author" content="Gabriel Nunes">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="theme-color" content="#3F4343">
+  <meta name="msapplication-navbutton-color" content="#3F4343">
+  <meta name="apple-mobile-web-app-status-bar-style" content="#3F4343">
+  <title>omigo</title>
+  <!--build:css css/styles.min.css-->
+  <link rel="stylesheet" href="../node_modules/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <!--endbuild-->
+</head>
+<body id="body">
+  <div class="header">
+    <div class="container">
+      <div class="logo">
+        <a href="./"><img src="img/logo.png" width="75px" alt="Omigo"></a>
+      </div>
+      <button class="btn green" type="button" name="action" id="control" data-current="start">start</button>
+      <div class="online-count">
+        <strong>x</strong> online now
+      </div>
+    </div>
+  </div>
+  <div class="container main">
+    <div class="chat text-only">
+      <div class="video">
+        <div class="stranger basic-shadow">
+          <div class="load-canvas">
+            <div class="spinner">
+              <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+              <span class="sr-only">Loading...</span>
+            </div>
+          </div>
+        </div>
+        <div class="me  basic-shadow"></div>
+      </div>
+      <div class="text basic-shadow">
+          <div class="conversation-box" id="conversation-box">
+            <!-- WELCOME MESSAGE -->
+            <p class="syslog"><strong>Hi, welcome to <span class="special">omigo</span>!</strong></p>
+            <p></p>
+            <p></p>
+            <p class="syslog"><strong>omigo</strong> (oh·me·goal) is a great way to meet new friends.</p>
+            <p class="syslog">When you use omigo, we pick someone else at random and let you talk one-on-one.</p>
+            <p class="syslog">To help you stay safe, chats are anonymous unless you tell someone who you are (not suggested!),</p>
+            <p class="syslog">and you can stop a chat at any time.</p>
+            <p class="syslog">If you can't be nice, please don't use omigo.</p>
+            <p></p>
+            <p></p>
+            <p class="syslog"><strong>Click on the <span class="special">start</span> button (on top bar) or press <span class="special">ESC</span> and <i>have a nice chatting!</i></strong></p>
+            <p></p>
+          </div>
+          <div class="write-box">
+            <textarea name="message"></textarea>
+            <button class="btn" type="button" name="button">send</button>
+          </div>
+      </div>
+    </div>
+  </div>
+  <!--build:js js/vendor.min.js -->
+  <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+  <script src="../node_modules/socket.io-client/dist/socket.io.min.js"></script>
+  <script src="../node_modules/rtcpeerconnection/rtcpeerconnection.bundle.js"></script>
+  <script src="../node_modules/webrtc-adapter/out/adapter.js"></script>
+  <!-- endbuild -->
+  <!--build:js js/main.min.js -->
+  <script src="js/app.js"></script>
+  <script src="js/chat-box.js"></script>
+  <script src="js/chat-client.js"></script>
+  <!-- endbuild -->
+</body>
+</html>

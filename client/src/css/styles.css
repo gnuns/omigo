@@ -1,0 +1,437 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var, u,
+center, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+html, body {
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden; }
+
+body {
+  background-color: #FDFDFD;
+  font-family: "Open Sans", sans-serif !important;
+  text-rendering: optimizeLegibility !important; }
+
+a {
+  text-decoration: none;
+  outline: 0; }
+
+strong {
+  font-weight: 600; }
+
+.container {
+  width: 100%;
+  width: calc(100% - 40px);
+  right: 20px;
+  left: 20px;
+  position: absolute;
+  margin: auto;
+  display: block; }
+  .container.main {
+    height: 90%;
+    height: calc(100% - 100px); }
+
+@media screen and (max-width: 575px) {
+  .container {
+    width: calc(100% - 20px) !important;
+    left: 10px;
+    right: 10px; }
+    .container.main {
+      width: 100% !important;
+      height: 90% !important;
+      left: 0px;
+      right: 0px; } }
+
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local("Open Sans"), local("OpenSans"), url(https://fonts.gstatic.com/s/opensans/v13/K88pR3goAWT7BTt32Z01mxJtnKITppOI_IvcXXDNrsc.woff2) format("woff2");
+  unicode-range: U+0460-052F, U+20B4, U+2DE0-2DFF, U+A640-A69F; }
+
+/* cyrillic */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local("Open Sans"), local("OpenSans"), url(https://fonts.gstatic.com/s/opensans/v13/RjgO7rYTmqiVp7vzi-Q5URJtnKITppOI_IvcXXDNrsc.woff2) format("woff2");
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116; }
+
+/* greek-ext */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local("Open Sans"), local("OpenSans"), url(https://fonts.gstatic.com/s/opensans/v13/LWCjsQkB6EMdfHrEVqA1KRJtnKITppOI_IvcXXDNrsc.woff2) format("woff2");
+  unicode-range: U+1F00-1FFF; }
+
+/* greek */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local("Open Sans"), local("OpenSans"), url(https://fonts.gstatic.com/s/opensans/v13/xozscpT2726on7jbcb_pAhJtnKITppOI_IvcXXDNrsc.woff2) format("woff2");
+  unicode-range: U+0370-03FF; }
+
+/* vietnamese */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local("Open Sans"), local("OpenSans"), url(https://fonts.gstatic.com/s/opensans/v13/59ZRklaO5bWGqF5A9baEERJtnKITppOI_IvcXXDNrsc.woff2) format("woff2");
+  unicode-range: U+0102-0103, U+1EA0-1EF9, U+20AB; }
+
+/* latin-ext */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local("Open Sans"), local("OpenSans"), url(https://fonts.gstatic.com/s/opensans/v13/u-WUoqrET9fUeobQW7jkRRJtnKITppOI_IvcXXDNrsc.woff2) format("woff2");
+  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF; }
+
+/* latin */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local("Open Sans"), local("OpenSans"), url(https://fonts.gstatic.com/s/opensans/v13/cJZKeOuBrn4kERxqtaUH3VtXRa8TVwTICgirnJhmVJw.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000; }
+
+.pull-right {
+  float: right; }
+
+.pull-left {
+  float: left; }
+
+.basic-shadow {
+  -webkit-box-shadow: 1px 1px 4px 0px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 1px 1px 4px 0px rgba(0, 0, 0, 0.15);
+  box-shadow: 1px 1px 4px 0px rgba(0, 0, 0, 0.15); }
+
+.special {
+  color: #80CC47; }
+
+.btn {
+  padding: 5px 10px;
+  margin: 0px;
+  color: #EEEEEE;
+  background-color: #404444;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  opacity: .95;
+  font-weight: 600;
+  text-transform: lowercase; }
+  .btn:active {
+    outline: 0;
+    border: 0px; }
+  .btn:hover {
+    opacity: 1; }
+  .btn.green {
+    color: #3F4343;
+    background-color: #80CC47; }
+  .btn.red {
+    color: #3F4343;
+    background-color: #E14E46; }
+
+.header {
+  background-color: #3F4343;
+  height: 34px;
+  width: 100%;
+  padding: 8px 0px;
+  overflow: hidden; }
+  .header .logo {
+    float: left;
+    margin-right: 15px;
+    margin-top: 3px;
+    width: 72px;
+    cursor: pointer; }
+  .header button {
+    margin-top: 5px;
+    font-size: 0.9em; }
+  .header .online-count {
+    min-width: 120px;
+    text-align: right;
+    float: right;
+    display: block;
+    padding: 11px 0px;
+    color: #EEEEEE;
+    font-size: 1em;
+    font-weight: 200; }
+
+@media screen and (max-width: 575px) {
+  .header {
+    position: fixed;
+    z-index: 10000; }
+    .header .online-count {
+      display: none; }
+    .header button {
+      float: right;
+      margin-top: 2.5px;
+      font-size: 1em; } }
+
+.chat {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  padding: 0px;
+  margin-top: 25px;
+  display: block; }
+  .chat.text-only .video {
+    display: none; }
+  .chat.text-only .text {
+    width: 97vw; }
+  .chat .video {
+    width: 23vw;
+    height: 100%;
+    display: block;
+    position: absolute;
+    left: 0px; }
+    .chat .video .me, .chat .video .stranger {
+      background-color: #EEEEEE;
+      border-radius: 3px;
+      height: 49%;
+      width: 100%;
+      position: absolute;
+      overflow: hidden; }
+      .chat .video .me.loading .load-canvas, .chat .video .stranger.loading .load-canvas {
+        display: flex; }
+      .chat .video .me .load-canvas, .chat .video .stranger .load-canvas {
+        display: none;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        background-color: #3F4343;
+        color: #80CC47;
+        z-index: 1; }
+      .chat .video .me video, .chat .video .stranger video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        z-index: 10; }
+    .chat .video .stranger {
+      top: 0px;
+      left: 0px; }
+    .chat .video .me {
+      bottom: 0px;
+      left: 0px; }
+  .chat .text {
+    width: 72vw;
+    height: 100%;
+    position: absolute;
+    background-color: #fff;
+    border-radius: 3px;
+    bottom: 0px;
+    right: 0px;
+    overflow: hidden; }
+    .chat .text .conversation-box {
+      position: absolute;
+      top: 0px;
+      height: calc(100% - 130px);
+      width: 95%;
+      margin-left: 2.5%;
+      margin-right: 2.5%;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      overflow-y: auto;
+      overflow-x: hidden;
+      color: #3F4343;
+      font-size: 0.95em; }
+      .chat .text .conversation-box p {
+        padding-top: 5px; }
+        .chat .text .conversation-box p.syslog {
+          padding-top: 2px;
+          margin-bottom: 5px;
+          margin-top: 5px; }
+          .chat .text .conversation-box p.syslog.error {
+            color: #E14E46 !important; }
+        .chat .text .conversation-box p.userlog .name {
+          font-weight: 600; }
+          .chat .text .conversation-box p.userlog .name::after {
+            color: #3F4343;
+            content: ':'; }
+        .chat .text .conversation-box p.userlog.stranger .name {
+          color: #80CC47; }
+        .chat .text .conversation-box p.userlog.me .name {
+          color: #3F4343; }
+    .chat .text .write-box {
+      position: relative;
+      width: 95%;
+      border-top: 2px solid #EEEEEE;
+      height: 110px;
+      margin: auto;
+      top: 100%;
+      margin-top: -110px;
+      overflow: hidden; }
+      .chat .text .write-box textarea {
+        font-family: "Open Sans", sans-serif;
+        border: none 0px;
+        outline: 0;
+        width: 80%;
+        resize: none;
+        padding-top: 10px;
+        height: 100px;
+        float: left; }
+        .chat .text .write-box textarea:focus {
+          border: none 0px;
+          outline: 0; }
+      .chat .text .write-box button {
+        float: right;
+        margin-right: 5px;
+        margin-top: 20px;
+        padding: 20px;
+        opacity: .98;
+        color: #fff;
+        font-size: 0.95em; }
+
+@media screen and (min-width: 576px) and (max-width: 960px) {
+  .chat .video {
+    width: 30vw !important; }
+  .chat .text {
+    width: 63vw !important; }
+  .chat.text-only .text {
+    width: 100% !important; } }
+
+@media screen and (max-width: 575px) {
+  .chat {
+    width: 100%;
+    height: 100%;
+    margin-top: 50px; }
+    .chat.text-only .text {
+      top: 50px;
+      height: 100% !important; }
+    .chat .video {
+      width: 100% !important;
+      height: 40%;
+      /*
+        to set automatic 16:9 aspect ratio, set:
+        "padding-top: 56.25%"  and "width 100%;"
+      */
+      border-radius: 0px !important; }
+      .chat .video .stranger {
+        border-radius: 0px !important;
+        width: 100%;
+        height: 100%; }
+      .chat .video .me {
+        z-index: 1000;
+        width: 30%;
+        height: 0px;
+        bottom: 10px;
+        right: 10px;
+        left: auto;
+        padding-top: 16.875%; }
+    .chat .text {
+      width: 100% !important;
+      height: 60% !important;
+      position: absolute !important;
+      background-color: #fff !important;
+      border-radius: 3px !important;
+      top: auto !important;
+      bottom: 0px !important;
+      left: 0px !important;
+      right: 0px !important;
+      border-radius: 0px !important;
+      background-color: #EEEEEE !important; }
+      .chat .text .conversation-box {
+        position: absolute;
+        top: 0px;
+        height: calc(100% - 70px);
+        margin-top: 5px;
+        margin-bottom: 5px; }
+        .chat .text .conversation-box .syslog {
+          width: 100%;
+          text-align: center;
+          display: block;
+          clear: both;
+          margin-top: 5px; }
+        .chat .text .conversation-box .userlog {
+          max-width: 80%;
+          clear: both;
+          padding: 12px 10px;
+          font-size: .9em;
+          background-color: #fff;
+          margin-bottom: 8px;
+          display: block; }
+          .chat .text .conversation-box .userlog .name {
+            display: none; }
+          .chat .text .conversation-box .userlog.stranger {
+            float: left;
+            border-left: 4px solid #80CC47;
+            border-radius: 0px 3px 3px 0px; }
+          .chat .text .conversation-box .userlog.me {
+            float: right;
+            border-right: 4px solid #3F4343; }
+      .chat .text .write-box {
+        width: 100%;
+        height: 60px !important;
+        margin-top: -60px !important; }
+        .chat .text .write-box textarea {
+          padding-left: 10px;
+          height: 50px !important;
+          width: 100% !important;
+          position: absolute; }
+        .chat .text .write-box button {
+          float: right;
+          margin-right: 10px;
+          margin-top: 10px !important;
+          padding: 10px !important; } }
+
+@media screen and (max-width: 575px) and (max-height: 260px) {
+  .chat .video .stranger {
+    z-index: 1000 !important;
+    width: 30% !important;
+    height: 0px !important;
+    bottom: 10px !important;
+    left: 10px !important;
+    right: auto !important;
+    top: auto !important;
+    padding-top: 16.875% !important; } }

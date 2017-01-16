@@ -1,0 +1,28 @@
+.btn {
+  padding: 5px 10px;
+  margin: 0px;
+  color: $lightgray;
+  background-color: lighten($darkgray, 0.5);
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  opacity: .95;
+  font-weight: 600;
+  text-transform: lowercase;
+
+  &:active {
+    outline: 0;
+    border: 0px;
+  }
+  &:hover {
+    opacity: 1;
+  }
+  &.green {
+    color: $darkgray;
+    background-color: $green;
+  }
+  &.red {
+    color: $darkgray;
+    background-color: $red;
+  }
+}

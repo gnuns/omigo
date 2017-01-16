@@ -1,0 +1,290 @@
+    .chat {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  padding: 0px;
+  margin-top: 25px;
+  display: block;
+  &.text-only {
+    .video {
+      display: none;
+    }
+    .text {
+      width: 97vw;
+    }
+
+  }
+  .video {
+    width: 23vw;
+    height: 100%;
+    display: block;
+    position: absolute;
+    left: 0px;
+    .me, .stranger {
+      background-color: $lightgray;
+      border-radius: $default-radius;
+      height:  49%;
+      width: 100%;
+      position: absolute;
+      overflow: hidden;
+      &.loading {
+        .load-canvas {
+          display: flex;
+        }
+      }
+      .load-canvas {
+        display: none;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        background-color: $darkgray;
+        color: $green;
+        z-index: 1;
+      }
+      video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        z-index: 10;
+      }
+    }
+    .stranger {
+      top: 0px;
+      left: 0px;
+    }
+    .me {
+      bottom: 0px;
+      left: 0px;
+    }
+  }
+  .text {
+    width: 72vw;
+    height: 100%;
+    // display: table;
+    position: absolute;
+    background-color: #fff;
+    border-radius: $default-radius;
+    bottom: 0px;
+    right: 0px;
+    overflow: hidden;
+    .conversation-box {
+      position: absolute;
+      top: 0px;
+      height: calc(100% - 130px);
+      width: 95%;
+      margin-left: 2.5%;
+      margin-right: 2.5%;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      overflow-y: auto;
+      overflow-x: hidden;
+      color: $darkgray;
+      font-size: 0.95em;
+
+      p {
+        padding-top: 5px;
+        &.syslog {
+          padding-top: 2px;
+          margin-bottom: 5px;
+          margin-top: 5px;
+          &.error {
+            color: $red !important;
+          }
+        }
+        &.userlog {
+          .name {
+            font-weight: 600;
+            &::after {
+              color: $darkgray;
+              content: ':';
+            }
+          }
+          &.stranger {
+            .name {
+              color: $green;
+            }
+          }
+          &.me {
+            .name {
+              color: $darkgray;
+            }
+          }
+        }
+      }
+    }
+    .write-box {
+      position: relative;
+      width: 95%;
+      border-top: 2px solid $lightgray;
+      height: 110px;
+      margin: auto;
+      top: 100%;
+      margin-top: -110px;
+      overflow: hidden;
+
+      textarea {
+        font-family: $default-font;
+        border: none 0px;
+        outline: 0;
+        &:focus {
+          border: none 0px;
+          outline: 0;
+        }
+        width: 80%;
+        resize: none;
+        padding-top: 10px;
+        height: 100px;
+        float: left;
+      }
+      button {
+        float: right;
+        margin-right: 5px;
+        margin-top:20px;
+        padding: 20px;
+        opacity: .98;
+        color: #fff;
+        font-size: 0.95em;
+      }
+    }
+  }
+}
+@media screen and (min-width: $mobile-width + 1) and (max-width: 960px) {
+  .chat {
+    .video {
+      width: 30vw !important
+    }
+    .text {
+      width: 63vw !important;
+    }
+    &.text-only {
+      .text {
+        width: 100% !important;
+      }
+    }
+  }
+}
+@media screen and (max-width: $mobile-width) {
+  .chat {
+    width: 100%;
+    height: 100%;
+    margin-top: 50px;
+    &.text-only {
+      .text {
+        top: 50px;
+        height: 100% !important;
+      }
+    }
+    .video {
+      width: 100% !important;
+      height: 40%;
+      /*
+        to set automatic 16:9 aspect ratio, set:
+        "padding-top: 56.25%"  and "width 100%;"
+      */
+      border-radius: 0px !important;
+      .stranger {
+        border-radius: 0px !important;
+        width: 100%;
+        height: 100%;
+      }
+      .me {
+        z-index: 1000;
+        width: 30%;
+        height: 0px;
+        bottom: 10px;
+        right: 10px;
+        left: auto;
+        padding-top: 16.875%;
+      }
+    }
+    .text {
+      width: 100% !important;
+      height: 60% !important;
+      position: absolute !important;
+      background-color: #fff !important;
+      border-radius: $default-radius !important;
+      top:auto !important;
+      bottom: 0px !important;
+      left: 0px !important;
+      right: 0px !important;
+      border-radius: 0px !important;
+      background-color: $lightgray !important;
+      .conversation-box {
+        position: absolute;
+        top: 0px;
+        height: calc(100% - 70px);
+        margin-top: 5px;
+        margin-bottom: 5px;
+        // background-color: $lightgray;
+        .syslog {
+          width: 100%;
+          text-align: center;
+          display: block;
+          clear: both;
+          margin-top: 5px;
+        }
+        .userlog {
+          max-width: 80%;
+          clear: both;
+          padding: 12px 10px;
+          font-size: .9em;
+          background-color: #fff;
+          margin-bottom: 8px;
+          display: block;
+          .name {
+            display: none;
+          }
+          &.stranger {
+            float: left;
+            border-left: 4px solid $green;
+            border-radius: 0px $default-radius $default-radius 0px ;
+          }
+          &.me {
+            float: right;
+            border-right: 4px solid $darkgray;
+
+          }
+        }
+      }
+      .write-box {
+        width: 100%;
+        height: 60px !important;
+        margin-top: -60px !important;
+        textarea {
+          padding-left: 10px;
+          height: 50px !important;
+          width: 100% !important;
+          position: absolute;
+        }
+        button {
+          float: right;
+          margin-right: 10px;
+          margin-top:10px !important;
+          padding: 10px !important;
+        }
+      }
+    }
+  }
+  @media screen and (max-height: 260px) {
+    .chat {
+      .video {
+        .stranger {
+          z-index: 1000 !important;
+          width: 30% !important;
+          height: 0px !important;
+          bottom: 10px !important;
+          left: 10px !important;
+          right: auto !important;
+          top: auto !important;
+          padding-top: 16.875% !important;
+        }
+      }
+    }
+  }
+}

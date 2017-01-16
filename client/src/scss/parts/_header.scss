@@ -1,0 +1,42 @@
+.header {
+  background-color: $darkgray;
+  height: 34px;
+  width: 100%;
+  padding:8px 0px;
+  overflow: hidden;
+  .logo {
+    float: left;
+    margin-right: 15px;
+    margin-top: 3px;
+    width: 72px;
+    cursor: pointer;
+  }
+  button {
+    margin-top: 5px;
+    font-size: 0.9em;
+  }
+  .online-count {
+    min-width: 120px;
+    text-align: right;
+    float: right;
+    display: block;
+    padding: 11px 0px;
+    color: $lightgray;
+    font-size: 1em;
+    font-weight: 200;
+  }
+}
+@media screen and (max-width: $mobile-width) {
+  .header {
+    position: fixed;
+    z-index: 10000;
+    .online-count {
+      display: none;
+    }
+    button {
+      float: right;
+      margin-top: 2.5px;
+      font-size: 1em;
+    }
+  }
+}
