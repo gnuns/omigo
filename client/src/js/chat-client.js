@@ -6,7 +6,7 @@
  **********************************************/
 'use strict';
 window.chatClient = (function() {
-  const socket = io(window.server);
+  const socket = io(window.serverURI);
   let hasPartner = false;
   let isVideoChat = false;
   let partnerIsStreaming = false;
