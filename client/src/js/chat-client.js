@@ -6,7 +6,7 @@
  **********************************************/
 'use strict';
 window.chatClient = (function() {
-  const socket = io(window.serverURI);
+  const socket = io(window.server);
   let hasPartner = false;
   let isVideoChat = false;
   let partnerIsStreaming = false;
@@ -45,7 +45,7 @@ window.chatClient = (function() {
 
   function disconnectFromPartner() {
     hasPartner = false;
-    if (peer && peer.destroy) peer.close();
+    if (peer && peer.close) peer.close();
     peer = null;
     partnerIsStreaming = false;
     $('.video>.stranger').removeClass('loading');
