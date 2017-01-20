@@ -45,7 +45,7 @@ window.chatClient = (function() {
 
   function disconnectFromPartner() {
     hasPartner = false;
-    if (peer && peer.destroy) peer.close();
+    if (peer && peer.close) peer.close();
     peer = null;
     partnerIsStreaming = false;
     $('.video>.stranger').removeClass('loading');
