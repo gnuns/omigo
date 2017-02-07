@@ -26,13 +26,13 @@ $ npm install
 $ npm start # check the server/config.json file
 ```
 
-## Features
+## TODO
 - [x] Text chat
 - [x] Video chat
 - [x] Mobile compatibility
 - [ ] Mode switch button (text/video)
 - [ ] Multi-language
-- [ ] 'Stranger is typing...'
+- [x] 'Stranger is typing...'
 
 ## License
 
