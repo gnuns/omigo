@@ -1,6 +1,6 @@
 <p align="center"><img width="480" alt="A-Frame" src="http://i.imgur.com/0Rjl4RZ.png"></p>
 
-<p align="center"><b>A mobile compatible anonymous random chat using socket.io and WebRTC</b></p>
+<p align="center"><b>A mobile compatible anonymous random chat using Elixir/Phoenix and WebRTC</b></p>
 
 ## Screenshots
 [...]
@@ -18,21 +18,15 @@ $ gulp build # will build on the dist/ folder
 ```
 
 #### Building the server
-
-```sh
-$ git clone https://github.com/gnuns/omigo
-$ cd omigo/server
-$ npm install
-$ npm start # check the server/config.json file
-```
+[...]
 
 ## TODO
-- [x] Text chat
-- [x] Video chat
-- [x] Mobile compatibility
+- [ ] Text chat               
+- [ ] Video chat
+- [X] Mobile compatibility
 - [ ] Mode switch button (text/video)
 - [ ] Multi-language
-- [x] 'Stranger is typing...'
+- [ ] 'Stranger is typing...'
 
 ## License
 
