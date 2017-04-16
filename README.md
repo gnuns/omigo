@@ -3,7 +3,8 @@
 <p align="center"><b>A mobile compatible anonymous random chat using socket.io and WebRTC</b></p>
 
 ## Screenshots
-[...]
+<img width="200" alt="A-Frame" src="http://i.imgur.com/2cmHx3p.png">
+<img src="http://i.imgur.com/18tD8BW.png">
 ## Building
 Omigo consists of two parts: the server, which establishes and control the connections between peers, and the client, the front-end user interface.
 
