@@ -1,4 +1,4 @@
-<p align="center"><img width="480" alt="A-Frame" src="http://i.imgur.com/0Rjl4RZ.png"></p>
+<p align="center"><img width="480" alt="Omigo" src="http://i.imgur.com/0Rjl4RZ.png"></p>
 
 <p align="center"><b>A mobile compatible anonymous random chat using socket.io and WebRTC</b></p>
 
