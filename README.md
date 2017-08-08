@@ -16,6 +16,7 @@ $ npm install -g gulp
 $ git clone https://github.com/gnuns/omigo
 $ cd omigo/client
 $ npm install
+# nano client/src/js/app.js # update serverURI with your serverURI (default is http://localhost:3000)
 $ gulp build # will build on the dist/ folder
 ```
 
