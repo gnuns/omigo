@@ -6,7 +6,7 @@
  **********************************************/
 
 (function(){
-  window.serverURI = 'https://s.omigo.us';
+  window.serverURI = 'https://omigo.hackr.win';
   window.onresize = onresize;
   window.onbeforeunload = () => 'Are you sure you want to leave?';
 
