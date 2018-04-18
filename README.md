@@ -3,6 +3,8 @@
 <p align="center"><b>A mobile compatible anonymous random chat using socket.io and WebRTC</b></p>
 
 ## Screenshots
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fgnuns%2Fomigo.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fgnuns%2Fomigo?ref=badge_shield)
+
 <img width="200" alt="A-Frame" src="http://i.imgur.com/2cmHx3p.png">
 <img src="http://i.imgur.com/18tD8BW.png">
 
@@ -40,3 +42,6 @@ $ npm start # check the server/config.json file
 ## License
 
 This program is free software and is distributed under an [MIT License](LICENSE).
+
+
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fgnuns%2Fomigo.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fgnuns%2Fomigo?ref=badge_large)
