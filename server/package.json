@@ -10,7 +10,7 @@
   "author": "Gabriel Nunes",
   "license": "MIT",
   "dependencies": {
-    "express": "^4.14.0",
+    "express": "^4.17.3",
     "lodash": "^4.17.4",
     "socket.io": "^2.3.0"
   }
